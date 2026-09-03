@@ -10,7 +10,6 @@ const projects = [
 export default function Projects() {
 
     return (
-
         <div>
             <h2>PROJECTS</h2>
             <h3>프로젝트</h3>
@@ -34,8 +33,5 @@ export default function Projects() {
                 ))}
             </ul>
         </div>
-
-
     )
-
 }
