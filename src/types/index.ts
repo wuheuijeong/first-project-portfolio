@@ -27,3 +27,17 @@ export interface BlogPost {
   date: string;
   url: string;
 }
+
+export interface Project {
+  id: string;
+  title: string;
+  summary: string;
+  role: string;
+  stack: string[];
+  teamsize: number;
+  period: string;
+  imageUrl?: string;
+  detail: string;
+  demoUrl?: string;
+  githubUrl?: string;
+}
