@@ -1,6 +1,7 @@
 import type { ActivityEntry, ActivityDetail } from "../../../types"
 import ActivityItem from "./ActivityItem";
 import ActivityDetailCard from "./ActivityDetailCard";
+import styles from "./Activity.module.css"
 
 const activities: ActivityEntry[] = [
   { id: "1", type: "해커톤", date: "2021.03", title: "HackDay 2023 최우수상", summary: "글로벌 해커톤 본선 진출" },
@@ -21,10 +22,11 @@ const activityDetails: ActivityDetail[] = [
 export default function Activity() {
 
     return (
-        <div>
+        <div className={styles.container}>
+            
             <div>
-                <h2>ACTIVITY</h2>
-                <h3>활동</h3>
+                <h2 className={styles.header}>ACTIVITY</h2>
+                <h3 className={styles.subheader}>활동</h3>
             </div>
 
 
@@ -36,11 +38,12 @@ export default function Activity() {
                     <div key={entry.id}>
                         <ActivityItem entry={entry} />
                         {detail && <ActivityDetailCard detail={detail} />}
-                    
                     </div>
                     );
                 })}
             </div>
+
+
         </div>
     )
 

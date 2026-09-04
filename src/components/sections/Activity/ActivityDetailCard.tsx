@@ -1,4 +1,5 @@
 import type { ActivityDetail } from "../../../types";
+import styles from "./ActivityDetailCard.module.css"
 
 interface ActivityDetailCardProps {
     detail: ActivityDetail;

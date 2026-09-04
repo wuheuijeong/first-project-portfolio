@@ -36,7 +36,7 @@ export interface Project {
   stack: string[];
   teamsize: number;
   period: string;
-  imageUrl?: string;
+  imageUrl?: string[];
   detail: string;
   demoUrl?: string;
   githubUrl?: string;
