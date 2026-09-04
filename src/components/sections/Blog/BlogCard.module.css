@@ -1,0 +1,30 @@
+.blogcard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-top: 1px solid #EFEFEF;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.summary {
+    font-size: 14px;
+    color: #999999;
+}
+
+.meta {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #666666;
+}

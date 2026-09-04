@@ -1,0 +1,41 @@
+.fulltitle {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.role {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #666666;
+    background: #f2f4f6;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.detail {
+    font-size: 15px;
+    color: #5e5d5d
+}
+
+.listli {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 2;
+    list-style: disc;
+}
+
+.card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 32px 36px;
+    width: 400px;
+}
+

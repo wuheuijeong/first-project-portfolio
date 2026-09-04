@@ -8,16 +8,16 @@ interface ActivityDetailCardProps {
 export default function ActivityDetailCard({detail}: ActivityDetailCardProps) {
 
     return (
-        <div>
+        <div className={styles.card}>
             <div>
-                <h3>{detail.fulltitle}</h3>
-                <p>{detail.role}</p>
+                <h3 className={styles.fulltitle}>{detail.fulltitle}</h3>
+                <p className={styles.role}>{detail.role}</p>
             </div>
 
             <div>
-                <ul>
+                <ul className={styles.detail}>
                     {detail.details.map((detail, idx) => (
-                        <li key={idx}>{detail}</li>
+                        <li className={styles.listli} key={idx}>{detail}</li>
                     ))}
                 </ul>
             </div>

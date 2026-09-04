@@ -1,0 +1,28 @@
+.container {
+    position: relative;
+    padding: 60px 60px;
+}
+
+.header {
+    color: #E8674A;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.subheader {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 4px;
+}
+
+.blogcard {
+
+}
+
+.arrow {
+    width: 80px;
+    height: 80px;
+
+}
