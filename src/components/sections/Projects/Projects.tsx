@@ -2,11 +2,12 @@ import ProjectCard from "./ProjectCard";
 import { useState } from "react";
 import type { Project } from "../../../types";
 import ProjectModal from "./ProjectModal";
+import styles from "./Projects.module.css"
 
 const projects: Project[] = [
   {
     id: "1",
-    title: "포트폴리오 프로젝트",
+    title: "Portfolio Project",
     summary: "현대오토에버 모빌리티 SW 스쿨 첫 번째 프로젝트, 개인 포트폴리오 만들기",
     role: "프론트엔드 리드",
     stack: ["React", "TypeScript", "CSS Modules"],
@@ -54,11 +55,13 @@ export default function Projects() {
     const [selected, setSelected] = useState<Project | null>(null);
 
     return (
-        <div>
-            <h2>PROJECTS</h2>
-            <h3>프로젝트</h3>
+        <div className = {styles.container}>
+          <div className={styles.containerHeader}>
+            <h2 className={styles.header}>PROJECTS</h2>
+            <h3 className={styles.subHeader}>프로젝트</h3>
+          </div>
 
-            <ul className="project-list">
+            <ul className={styles.projectList}>
                 {projects.map((project) => (
                     <li key={project.id} onClick={() => setSelected(project)}>
                         <ProjectCard

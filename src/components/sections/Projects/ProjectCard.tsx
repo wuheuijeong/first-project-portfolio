@@ -1,3 +1,5 @@
+import styles from "./ProjectCard.module.css"
+import TechTag from "../../ui/TechTag/TechTag";
 
 export interface ProjectCardProps {
     id: string;
@@ -15,34 +17,43 @@ export interface ProjectCardProps {
 
 export default function ProjectCard({title, summary, role, stack, teamsize, period, imageUrl, demoUrl, githubUrl}: ProjectCardProps) {
     return (
-        <div className="project-card">
-            <div>
-                <div>
-                    <img src={imageUrl} alt={title} />
+        <div className={styles.projectcard}>
+            <div className={styles.layout}>
+                <div className={styles.image}>
+                    <img src={imageUrl} alt={title} className={styles.firstimage}/>
                 </div>
 
-                <div>
-                    <span>
-                        <h2>{title}</h2>
-                        <p>{demoUrl}</p>    
-                        <p>{githubUrl}</p>
+                <div className={styles.content}>
+                    <span className={styles.firstline}>
+                        <h2 className = {styles.title}>{title}</h2>
+                        <div className= {styles.icon}>
+                            {demoUrl && (
+                                <a href={demoUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
+                                    <img src="/icons/Link_icon.svg" alt="링크" width={16} height={16} />
+                                </a>
+                            )}
+                            {githubUrl && (
+                                <a href={githubUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
+                                    <img src="/icons/Github_icon.svg" alt="깃허브" width={16} height={16} />
+                                </a>
+                            )}
+                        </div>
                     </span>
 
-                    <span>
-                        <p>{role}</p>
-                        <p>{teamsize}</p>
-                        <p>{period}</p>
-                    </span>
-                </div>
+                    <p className={styles.secondline}>
+                        {role} · {teamsize}인 · {period}
+                    </p>
+                
 
-                <div>
-                    {stack.map((tech) => (
-                        <span key={tech}>{tech}</span>
-                    ))}
-                </div>
+                    <div className={styles.stackRow}>
+                        {stack.map((tech) => (
+                            <TechTag key={tech}>{tech}</TechTag>
+                        ))}
+                    </div>
 
-                <div>
-                    <p>{summary}</p>
+                    <div>
+                        <p className={styles.summary}>{summary}</p>
+                    </div>
                 </div>
             </div>
         </div>

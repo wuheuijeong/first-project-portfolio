@@ -1,0 +1,56 @@
+.container {
+    background: #FFFFFF;
+    padding: 80px 80px;
+}
+
+.header {
+    color: #E8674A;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.subheader {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+}
+
+.career {
+    display: flex;
+    gap: 60px;
+    flex-direction: row;
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    height: 0.5px;
+    background: #8c8b8b;
+}
+
+.item {
+    flex: 1;
+}
+
+.date {
+    font-size: 15px;
+    font-weight: 700;
+    color: #E8674A;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+}
+
+.title {
+    padding-top: 4px;
+    margin-bottom: 8px;
+}
+
+.description {
+    flex: 1;
+    color: #666666;
+}

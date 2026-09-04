@@ -1,3 +1,6 @@
+import styles from "./SkillBox.module.css"
+
+
 interface SkillBoxProps {
     icon: string;
     title: string;
@@ -6,11 +9,12 @@ interface SkillBoxProps {
 
 export default function SkillBox({icon, title, description}: SkillBoxProps) {
     return (
-        <div className="skillbox">
-            <div className="skillbox-header">
-                <span>{icon} {title}</span>
+        <div className={styles.skillbox}>
+            <div className={styles.boxheader}>
+                <img src={icon} alt={title} width={30} height={30} />
+                <span>{title}</span>
             </div>
-            <p>{description}</p>
+            <p className={styles.boxdescription}>{description}</p>
         </div>
     );
 }

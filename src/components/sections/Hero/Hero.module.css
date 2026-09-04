@@ -1,36 +1,56 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 70px;
+    background: #FFFFFF;
+    padding: 80px 80px;
+}
+
+.bottomRow {
+    display: flex;
+    line-height: 1.9;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    text-align: left;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 480px;
+}
+
+.title {
+    text-align: left;
+    font-size: 70px;
+    letter-spacing: -0.02em;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #1A1A1A;
+}
+
+.role {
+    font-size: 30px;
+    font-weight: 700;
+    color: #E8674A;
+}
+
+.intro {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+}
+
 .linkGroup {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8px;
-    border: 40px;    
+    flex-direction: row;
+    gap: 16px;
 }
 
-a {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px 10px 16px;
-
-  background: #F2F4F6;
-  border-radius: 999px;
-
-  font-size: 14px;
-  color: #444444;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.a:hover {
-  background: #E8EBEE;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #378ADD;
-  flex-shrink: 0;
+.image {
+    border-radius: 16px;
 }
