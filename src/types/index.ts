@@ -41,3 +41,15 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
 }
+
+export interface Keyword {
+  id: string;
+  text: string;
+  weight: number;
+  suggestedQuestion: string;
+}
+
+export interface Message {
+  role: "user" | "bot";
+  content: string;
+}

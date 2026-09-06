@@ -17,9 +17,8 @@
     margin-bottom: 4px;
 }
 
-
-.arrow {
-    width: 80px;
-    height: 80px;
-
+.layout {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
 }

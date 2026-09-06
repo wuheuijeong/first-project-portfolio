@@ -6,12 +6,15 @@ import Projects from './components/sections/Projects/Projects'
 import Activity from './components/sections/Activity/Activity'
 import Blog from './components/sections/Blog/Blog'
 import Closing from './components/sections/Closing/Contact'
+import WordCloud from './components/sections/WordColudChat/WordCloud'
+import WordCloudChat from './components/sections/WordColudChat/WordCloudChat'
 
 export default function App() {
 
   return (
     <>
       <Hero />
+      <WordCloudChat />
       <CareerTimeline />
       <Skills />
       <Projects />

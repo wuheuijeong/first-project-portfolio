@@ -1,0 +1,24 @@
+.cloud {
+  flex: 1 1 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 16px;
+  background: #F8F9FA;
+  border-radius: 20px;
+  padding: 40px;
+  min-height: 400px;
+}
+
+.keyword {
+  font-weight: 800;
+  color: #E8674A;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.keyword:hover {
+  color: #1A1A1A;
+  transform: scale(1.05);
+}
