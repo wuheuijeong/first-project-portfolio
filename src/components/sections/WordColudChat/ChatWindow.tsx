@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { Message } from "../../../types";
 import styles from "./ChatWindow.module.css";
 
@@ -11,6 +11,14 @@ interface ChatWindowProps {
 
 export default function ChatWindow({ messages, onSend, loading, suggestedQuestions }: ChatWindowProps) {
   const [input, setInput] = useState("");
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = messagesContainerRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
+  }, [messages, suggestedQuestions]);
 
   const handleSend = () => {
     if (!input.trim() || loading) return;
@@ -18,9 +26,17 @@ export default function ChatWindow({ messages, onSend, loading, suggestedQuestio
     setInput("");
   };
 
+  const isEmpty = messages.length === 0 && suggestedQuestions.length === 0;
+
   return (
     <div className={styles.chatBox}>
-      <div className={styles.messages}>
+      <div className={styles.messages} ref={messagesContainerRef}>
+        {isEmpty && (
+          <p className={styles.botMsg}>
+            안녕하세요! 저는 우희정입니다. 왼쪽 키워드를 클릭하거나, 궁금한 걸 직접 물어봐 주세요.
+          </p>
+        )}
+
         {messages.map((m, idx) => (
           <p key={idx} className={m.role === "user" ? styles.userMsg : styles.botMsg}>
             {m.content}
