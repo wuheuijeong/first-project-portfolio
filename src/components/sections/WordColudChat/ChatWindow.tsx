@@ -4,20 +4,18 @@ import styles from "./ChatWindow.module.css"
 
 interface ChatWindowProps {
     messages: Message[];
-    setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
+    onSend: (question: string) => void;
+    loading: boolean;
 }
 
-export default function ChatWindow( {messages, setMessages }: ChatWindowProps) {
+export default function ChatWindow( {messages, onSend, loading }: ChatWindowProps) {
     const [input, setInput] = useState("");
 
     const handleSend = () => {
-        if (!input.trim()) return;
-        const answer = `(임시 응답) "${input}"에 대한 답변입니다.`;
-
-        setMessages((prev) => [...prev, {role: "user", content: input}, {role: "bot", content: answer}]);
-
+        if(!input.trim() || loading) return;
+        onSend(input);
         setInput("");
-    }
+    };
 
     return (
         <div className={styles.chatBox}>
@@ -27,6 +25,7 @@ export default function ChatWindow( {messages, setMessages }: ChatWindowProps) {
                         {m.content}
                     </p>
                 ))}
+                {loading && <p className={styles.botMsg}>답변을 가져오는 중...</p>}
             </div>
 
 
@@ -37,8 +36,9 @@ export default function ChatWindow( {messages, setMessages }: ChatWindowProps) {
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder="궁금한 점을 물어보세요!"
                 className={styles.input}
+                disabled={loading}
                 />
-                <button onClick={handleSend} className={styles.sendButton}>전송</button>
+                <button onClick={handleSend} className={styles.sendButton} disabled={loading}>전송</button>
             </div>
         </div>
     );

@@ -3,6 +3,8 @@ import type { Keyword, Message } from "../../../types";
 import styles from "./WordCloudChat.module.css"
 import WordCloud from "./WordCloud";
 import ChatWindow from "./ChatWindow";
+import aboutMeContent from "../../../data/aboutMe.md?raw";
+import { askQuestion } from "../../../lib/gemini";
 
 const keywords: Keyword[] = [
     {id: "1", text: "협업", weight: 5, suggestedQuestion: "팀 프로젝트에서 협업을 어떻게 했나요?"},
@@ -13,16 +15,20 @@ const keywords: Keyword[] = [
 
 export default function WordCloudChat() {
     const [messages, setMessages] = useState<Message[]>([]);
+    const [loading, setLoading] = useState(false);
+
+    const sendMessage = async (question: string) => {
+        setMessages((prev) => [...prev, {role: "user", content: question }]);
+        setLoading(true);
+
+        const answer = await askQuestion(question, aboutMeContent);
+        
+        setMessages((prev) => [...prev, {role: "bot", content: answer }]);
+        setLoading(false);
+    }
 
     const handleKeywordClick = (keyword: Keyword) => {
-        const question = keyword.suggestedQuestion;
-        const answer = `(임시 응답) "${question}"에 대한 답변입니다.`;
-
-        setMessages((prev) => [
-            ...prev,
-            {role: "user", content: question},
-            {role: "bot", content: answer},
-        ]);
+        sendMessage(keyword.suggestedQuestion);
     };
 
     return (
@@ -34,7 +40,7 @@ export default function WordCloudChat() {
 
             <div className={styles.layout}>
                 <WordCloud keywords={keywords} onSelect={handleKeywordClick} />
-                <ChatWindow messages={messages} setMessages={setMessages} />
+                <ChatWindow messages={messages} onSend={sendMessage} loading={loading} />
             </div>
         </div>
     );
