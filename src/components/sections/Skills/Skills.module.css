@@ -3,6 +3,12 @@
     padding: 80px 80px;
 }
 
+.skillList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .header {
     color: #E8674A;
     font-size: 24px;
@@ -25,4 +31,39 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 15px;
+}
+
+
+/* 카테고리 디자인 */
+
+.categoryTabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.tab {
+    font-size: 13px;
+    font-weight: 800;
+    padding: 8px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #999999;
+    background-color: #F2F4F6;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: color 0.3s, opacity 0.3s, background-color 0.3s filter 0.3s;
+}
+
+.activeTab {
+    font-size: 13px;
+    font-weight: 800;
+    padding: 8px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color:#E8674A;
+    opacity: 1;
+    filter: none;
+    transition: color 0.3s, opacity 0.3s, background-color 0.3s filter 0.3s;
 }

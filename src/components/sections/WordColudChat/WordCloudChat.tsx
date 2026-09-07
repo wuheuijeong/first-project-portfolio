@@ -27,8 +27,10 @@ export default function WordCloudChat() {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.header}>ABOUT ME</h2>
-            <h3 className={styles.subheader}>키워드로 알아보는 나</h3>
+            <div className={styles.headers}>
+                <h2 className={styles.header}>ABOUT ME</h2>
+                <h3 className={styles.subheader}>키워드로 알아보는 나</h3>
+            </div>
 
             <div className={styles.layout}>
                 <WordCloud keywords={keywords} onSelect={handleKeywordClick} />

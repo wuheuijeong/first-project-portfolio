@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    padding: 80px 80px;
+    align-items: center;
+    gap: 10px;
+}
+
+.closing {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+    gap: 16px;
+}
+
+.headMessage {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1A1A1A;
+}
+
+.subMessage {
+    font-size: 14px;
+    color: #666666;
+}

@@ -1,6 +1,10 @@
 .container {
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
     position: relative;
     padding: 60px 60px;
+    
 }
 
 .header {
