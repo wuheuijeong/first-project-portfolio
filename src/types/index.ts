@@ -46,10 +46,18 @@ export interface Keyword {
   id: string;
   text: string;
   weight: number;
-  suggestedQuestion: string;
+  questions: string[];
 }
 
 export interface Message {
   role: "user" | "bot";
   content: string;
+}
+
+export interface Skill {
+  id: string;
+  category: string;
+  title: string;
+  icon: string;
+  description: string;
 }

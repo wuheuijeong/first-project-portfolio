@@ -1,14 +1,15 @@
 import Groq from "groq-sdk";
 
-console.log("모든 환경변수 키 목록:", Object.keys(process.env).filter(k => k.includes("GROQ") || k.includes("GEMINI")));
-console.log("GROQ_API_KEY 값:", process.env.GROQ_API_KEY);
-
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
+
+  // 임시: 사용 가능한 모델 목록 확인
+  const models = await groq.models.list();
+  console.log("사용 가능한 모델 목록:", JSON.stringify(models, null, 2));
 
   const { question, context } = req.body;
 
@@ -17,11 +18,19 @@ export default async function handler(req: any, res: any) {
       messages: [
         {
           role: "system",
-          content: `다음은 나에 대한 정보야. 이 정보를 바탕으로 질문에 답변해줘. 정보에 없는 내용이면 모른다고 답해줘.\n\n${context}`,
+          content: `다음은 나에 대한 정보야. 이 정보를 바탕으로 질문에 답변해줘.
+
+규칙:
+- 2~3문장 이내로 간결하게 답변할 것
+- 마크다운 문법을 쓰지 말고 일반 텍스트로만 답변할 것
+
+[정보]
+${context}`,
         },
         { role: "user", content: question },
       ],
-      model: "llama-3.3-70b-versatile",
+      model: "openai/gpt-oss-20b",
+      max_tokens: 150,
     });
 
     const answer = completion.choices[0]?.message?.content ?? "답변을 가져오지 못했습니다.";

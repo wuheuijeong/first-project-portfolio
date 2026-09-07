@@ -1,63 +1,67 @@
+import { useState, useEffect } from "react";
 import type { Keyword } from "../../../types";
-import styles from "./WordCloud.module.css"
-import { useState } from "react";
-import { useEffect } from "react";
+import styles from "./WordCloud.module.css";
 
 interface WordCloudProps {
-    keywords: Keyword[];
-    onSelect: (keyword: Keyword) => void;
+  keywords: Keyword[];
+  onKeywordSelect: (keyword: Keyword) => void;
 }
 
 interface Position {
-    top: string;
-    left: string;
-    fontSize: number;
+  top: string;
+  left: string;
+  fontSize: number;
+  delay: number;
 }
 
-export default function WordCloud({ keywords, onSelect }: WordCloudProps) {
-    const [positions, setPositions] = useState<Record<string, Position>>({});
+export default function WordCloud({ keywords, onKeywordSelect }: WordCloudProps) {
+  const [activeKeywordId, setActiveKeywordId] = useState<string | null>(null);
+  const [positions, setPositions] = useState<Record<string, Position>>({});
 
-    useEffect(() => {
-        const initial: Record<string, Position> = {};
-        keywords.forEach((kw) => {
-            initial[kw.id] = {
-                top: `${10 + Math.random() * 70}%`,
-                left: `${10 + Math.random() * 70}%`,
-                fontSize: 14 + kw.weight * 4,
-            };
-        });
-        setPositions(initial);
-    }, [keywords]);
+  useEffect(() => {
+    const positioned: Record<string, Position> = {};
+    keywords.forEach((kw, idx) => {
+      const cols = 2;
+      const row = Math.floor(idx / cols);
+      const col = idx % cols;
+      positioned[kw.id] = {
+        top: `${15 + row * 35 + Math.random() * 10}%`,
+        left: `${20 + col * 45 + Math.random() * 10}%`,
+        fontSize: 24 + kw.weight * 4,
+        delay: idx * 0.4,
+      };
+    });
+    setPositions(positioned);
+  }, [keywords]);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setPositions((prev) => {
-                const updated = { ...prev };
-                keywords.forEach((kw) => {
-                    if (updated[kw.id]) {
-                        updated[kw.id] = {
-                            ...updated[kw.id],
-                            fontSize: 14 + Math.floor(Math.random() * 5 + 1) * 4,
-                        }
-                    }
-                });
-                return updated;
-            });
-        }, 4000);
-        return () => clearInterval(interval);
-    }, [keywords]);
+  const handleClick = (kw: Keyword) => {
+    setActiveKeywordId(kw.id);
+    onKeywordSelect(kw);
+  };
 
-    return (
-        <div className={styles.cloud}>
-            {keywords.map((kw) => (
-                <span
-                key={kw.id}
-                className={styles.keyword}
-                onClick={() => onSelect(kw)}
-                >
-                    {kw.text}
-                </span>
-            ))}
-        </div>
-    );
+  return (
+    <div className={styles.cloud}>
+      {keywords.map((kw) => {
+        const pos = positions[kw.id];
+        if (!pos) return null;
+
+        return (
+          <button
+            key={kw.id}
+            className={`${styles.keyword} ${activeKeywordId === kw.id ? styles.keywordActive : ""}`}
+            style={{
+              position: "absolute",
+              top: pos.top,
+              left: pos.left,
+              fontSize: `${pos.fontSize}px`,
+              animationDelay: `${pos.delay}s`,
+            }}
+            onClick={() => handleClick(kw)}
+          >
+            {kw.text}
+          </button>
+        );
+      })}
+    </div>
+  );
 }

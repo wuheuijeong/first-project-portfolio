@@ -1,24 +1,68 @@
 .cloud {
   flex: 1 1 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  gap: 16px;
+  min-width: 0;
+  position: relative;
   background: #F8F9FA;
   border-radius: 20px;
   padding: 40px;
   height: 400px;
+  overflow: hidden;
 }
 
 .keyword {
   font-weight: 800;
   color: #E8674A;
   cursor: pointer;
-  transition: color 0.2s, transform 0.2s;
+  white-space: nowrap;
+  transition: color 0.2s, transform 0.3s;
+  animation: floatMovement 4s ease-in-out infinite alternate;
 }
 
 .keyword:hover {
   color: #1A1A1A;
-  transform: scale(1.05);
+  transform: scale(1.1) !important;
+  animation-play-state: paused;
+}
+
+.keywordActive {
+  color: #1A1A1A !important;
+  transform: scale(1.15) !important;
+  animation-play-state: paused;
+}
+
+@keyframes floatMovement {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.questionBubbles {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  z-index: 30;
+}
+
+.questionBubble {
+  padding: 12px 20px;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #444444;
+  text-align: left;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.questionBubble:hover {
+  background: #EEF4FF;
+  border-color: #3182f6;
 }
