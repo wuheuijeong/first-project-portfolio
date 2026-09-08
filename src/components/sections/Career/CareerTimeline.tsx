@@ -1,12 +1,29 @@
 import styles from "./CareerTimeline.module.css"
 
 export default function CareerTimeliine() {
-     
+
+    // 타임라인에 표시할 경력 항목들
     const items = [
-        {date: "2022.03", title: "성신여자대학교 AI 융합학부 입학", description:"대학교에 입학했습니다."},
-        {date: "2025.09", title: "카카오모빌리티 인턴 (9개월)", description:"주차사업팀 인턴 9개월"},
-        {date: "2026.02", title: "2번", description:"2번입니다."},
-        {date: "2026.12", title: "현대오토에버 SW 모빌리티 스쿨 웹/앱 4기 수료", description:"3번입니다."}
+        {
+            date: "2022.03",
+            title: "성신여자대학교 AI융합학부 입학",
+            description: "AI융합학부 주전공으로 대학 생활을 시작했습니다.",
+        },
+        {
+            date: "2025.06",
+            title: "카카오모빌리티 인턴",
+            description: "카카오모빌리티 주차 사업팀에서 9개월 간 인턴으로 근무했습니다.",
+        },
+        {
+            date: "2026.02",
+            title: "성신여자대학교 졸업",
+            description: "4년간의 학업을 마쳤습니다.",
+        },
+        {
+            date: "2026.09",
+            title: "현대오토에버 모빌리티 SW 스쿨 웹/앱 4기",
+            description: "웹/앱 풀스택 과정을 수강하며 프론트엔드 개발 역량을 집중적으로 쌓고 있습니다.",
+        },
     ];
 
     return (

@@ -27,6 +27,7 @@ export default function ProjectCard({title, summary, role, stack, teamsize, peri
                     <span className={styles.firstline}>
                         <h2 className = {styles.title}>{title}</h2>
                         <div className= {styles.icon}>
+                            {/* 링크 클릭이 카드 클릭 이벤트로 전파되어 모달이 열리는 것 방지 */}
                             {demoUrl && (
                                 <a href={demoUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
                                     <img src="/icons/Link_icon.svg" alt="링크" width={16} height={16} />

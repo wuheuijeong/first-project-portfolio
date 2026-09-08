@@ -1,5 +1,7 @@
 .container {
     background: #FFFFFF;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 80px 80px;
 }
 
@@ -14,7 +16,7 @@
     margin-bottom: 4px;
 }
 
-.subheader {
+.subHeader {
     font-size: clamp(15px, 2.5vw, 20px);
     font-weight: 700;
     color: #1A1A1A;
@@ -23,4 +25,16 @@
 
 .projectList {
 
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
 }

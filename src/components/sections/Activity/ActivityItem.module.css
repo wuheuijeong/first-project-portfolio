@@ -1,9 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    background: #FFFFFF;
-    padding: 80px 80px;
+    gap: 16px;
+    min-width: 0;
 }
 
 .firstLine {
@@ -11,17 +10,18 @@
     flex-direction: row;
     gap: 8px;
     color: #999999;
-    font-size: 14px;
+    font-size: clamp(11px, 1.3vw, 13px);
     align-items: center;
 }
 
 .title {
     display: flex;
-    font-size: 20px;
+    font-size: clamp(15px, 1.8vw, 18px);
     font-weight: 600;
 }
 
 .summary {
+    font-size: clamp(12px, 1.4vw, 14px);
     color: #414141;
     font-weight: 400;
 }

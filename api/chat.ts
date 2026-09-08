@@ -23,11 +23,13 @@ export default async function handler(req: any, res: any) {
 정보에 없는 내용은 절대 추측하거나 지어내지 말고, 주어진 정보 안에서만 답변할 것. 정보에 없는 질문이면 모른다고 솔직하게 답변할 것.
 
 규칙:
-- 2~3문장 이내로 간결하게 답변할 것
+- 300자로 간결하게 답변할 것
 - 문장은 반드시 끝까지 완성할 것 (중간에 끊긴 문장으로 끝내지 말 것)
 - 마크다운 문법을 쓰지 말고 일반 텍스트로만 답변할 것
 - 별표(**), 밑줄(__) 등 강조 기호를 절대 사용하지 말 것
 - 지어낸 정보나 추측성 답변 없이 정확한 사실만 답변할 것
+- 존댓말로 답변할 것
+- 포트폴리오 주인이 답변하는 것처럼 톤앤매너를 적용하여 답변할 것
 
 [정보]
 ${context}`,
@@ -35,7 +37,6 @@ ${context}`,
         { role: "user", content: question },
       ],
       model: "openai/gpt-oss-20b",
-      max_tokens: 150,
     });
 
     const answer = completion.choices[0]?.message?.content ?? "답변을 가져오지 못했습니다.";

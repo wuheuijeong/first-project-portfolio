@@ -2,13 +2,13 @@
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
-  padding: 10px 18px 10px 16px;
+  gap: clamp(6px, 1vw, 8px);
+  padding: clamp(6px, 1.2vw, 10px) clamp(12px, 2.2vw, 18px) clamp(6px, 1.2vw, 10px) clamp(10px, 2vw, 16px);
 
   background: #F2F4F6;
   border-radius: 999px;
 
-  font-size: 14px;
+  font-size: clamp(11px, 1.6vw, 14px);
   color: #444444;
   text-decoration: none;
   cursor: pointer;
@@ -20,8 +20,8 @@
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: clamp(5px, 0.6vw, 6px);
+  height: clamp(5px, 0.6vw, 6px);
   border-radius: 50%;
   background-color: #E8674A;
   flex-shrink: 0;

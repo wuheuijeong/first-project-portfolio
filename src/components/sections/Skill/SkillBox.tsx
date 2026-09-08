@@ -7,6 +7,7 @@ interface SkillBoxProps {
 }
 
 export default function SkillBox({ title, description }: SkillBoxProps) {
+  // 매핑에 없는 기술이면 기본 아이콘으로 대체
   const IconComponent = skillIconMap[title];
 
   return (

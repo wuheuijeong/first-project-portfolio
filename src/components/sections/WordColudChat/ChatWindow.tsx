@@ -13,6 +13,7 @@ export default function ChatWindow({ messages, onSend, loading, suggestedQuestio
   const [input, setInput] = useState("");
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
+  // 메시지나 추천 질문이 추가될 때마다 스크롤을 맨 아래로 이동
   useEffect(() => {
     const container = messagesContainerRef.current;
     if (container) {
@@ -20,6 +21,7 @@ export default function ChatWindow({ messages, onSend, loading, suggestedQuestio
     }
   }, [messages, suggestedQuestions]);
 
+  // 빈 입력이거나 응답 대기 중이면 전송하지 않음
   const handleSend = () => {
     if (!input.trim() || loading) return;
     onSend(input);

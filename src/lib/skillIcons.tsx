@@ -3,6 +3,7 @@ import { SiSpring, SiSpringboot, SiJavascript, SiPython, SiSupabase, SiMysql } f
 import { TbBrain } from "react-icons/tb";
 import type { IconType } from "react-icons";
 
+// 기술명을 아이콘 컴포넌트에 매핑
 export const skillIconMap: Record<string, IconType> = {
   React: FaReact,
   JavaScript: SiJavascript,

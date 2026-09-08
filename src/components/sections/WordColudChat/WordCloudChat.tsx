@@ -6,6 +6,7 @@ import styles from "./WordCloudChat.module.css";
 import { askQuestion } from "../../../lib/ai";
 import aboutMeContent from "../../../data/aboutMe.md?raw";
 
+// 워드클라우드에 표시할 키워드와 각 키워드 클릭 시 추천 질문
 const keywords: Keyword[] = [
     {
     id: "1",
@@ -54,6 +55,7 @@ export default function WordcloudChat() {
   const [loading, setLoading] = useState(false);
   const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>([]);
 
+  // 사용자 질문을 저장하고 AI 응답을 받아와 메시지에 추가
   const sendMessage = async (question: string) => {
     setSuggestedQuestions([]); // 질문 보내면 추천 질문은 사라지게 설정
     setMessages((prev) => [...prev, { role: "user", content: question }]);
@@ -65,6 +67,7 @@ export default function WordcloudChat() {
     setLoading(false);
   };
 
+  // 워드클라우드에서 키워드 선택 시 관련 추천 질문 표시
   const handleKeywordSelect = (keyword: Keyword) => {
     setSuggestedQuestions(keyword.questions);
   };

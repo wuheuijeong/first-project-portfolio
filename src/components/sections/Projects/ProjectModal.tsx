@@ -20,6 +20,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
 
   return (
+    // 오버레이 클릭 시 닫히고 모달 내부 클릭은 전파 차단
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
 

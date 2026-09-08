@@ -1,34 +1,39 @@
 .fulltitle {
-    font-size: 20px;
+    font-size: clamp(15px, 1.8vw, 18px);
     font-weight: 600;
     color: #414141;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .role {
     display: inline-block;
-    font-size: 13px;
+    font-size: clamp(11px, 1.2vw, 13px);
     font-weight: 600;
     color: #666666;
     background: #f2f4f6;
     padding: 6px 16px;
     border-radius: 999px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 
 .detail {
-    font-size: 15px;
+    font-size: clamp(12px, 1.4vw, 14px);
     color: #5e5d5d
 }
 
 .listli {
-    font-size: 14px;
+    font-size: clamp(12px, 1.3vw, 13px);
     font-weight: 400;
     color: #1a1a1a;
-    line-height: 2;
+    line-height: 1.8;
     list-style: disc;
+    margin-bottom: 10px;
+}
+
+.listli:last-child {
+    margin-bottom: 0;
 }
 
 .card {
@@ -37,5 +42,19 @@
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
     padding: 32px 36px;
     width: 400px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 24px 20px;
+  }
 }
 

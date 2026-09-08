@@ -18,6 +18,7 @@ export default function WordCloud({ keywords, onKeywordSelect }: WordCloudProps)
   const [activeKeywordId, setActiveKeywordId] = useState<string | null>(null);
   const [positions, setPositions] = useState<Record<string, Position>>({});
 
+  // 화면 크기에 따라 배율을 조정하며 각 키워드의 위치와 크기를 계산
   useEffect(() => {
     const updatePositions = () => {
       const width = window.innerWidth;
@@ -28,6 +29,7 @@ export default function WordCloud({ keywords, onKeywordSelect }: WordCloudProps)
         scale = 0.7;
       }
 
+      // 2열 그리드 기준 위치에 랜덤 오프셋을 더해 자연스럽게 배치
       const positioned: Record<string, Position> = {};
       keywords.forEach((kw, idx) => {
         const cols = 2;
@@ -48,6 +50,7 @@ export default function WordCloud({ keywords, onKeywordSelect }: WordCloudProps)
     return () => window.removeEventListener("resize", updatePositions);
   }, [keywords]);
 
+  // 키워드 클릭 시 활성 표시하고 상위로 선택 결과 전달
   const handleClick = (kw: Keyword) => {
     setActiveKeywordId(kw.id);
     onKeywordSelect(kw);

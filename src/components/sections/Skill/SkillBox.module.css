@@ -11,12 +11,13 @@
     display: flex;
     align-items: center;
     margin-bottom: 16px;
-    gap: 15px;
-    font-size: 20px;
+    gap: 12px;
+    font-size: clamp(15px, 2vw, 18px);
     font-weight: 650;
 }
 
 .boxdescription {
-    font-size: 17px;
+    font-size: clamp(12px, 1.5vw, 14px);
     color: #666666;
+    line-height: 1.5;
 }

@@ -13,18 +13,28 @@
 }
 
 .title {
-    font-size: 18px;
+    font-size: clamp(14px, 1.8vw, 17px);
     font-weight: 700;
 }
 
 .summary {
-    font-size: 14px;
+    font-size: clamp(12px, 1.4vw, 14px);
     color: #999999;
 }
 
 .meta {
     display: inline-block;
-    font-size: 13px;
+    font-size: clamp(11px, 1.2vw, 13px);
     font-weight: 600;
     color: #666666;
+}
+
+@media (max-width: 768px) {
+  .blogcard {
+    padding: 18px 0;
+  }
+
+  .content {
+    gap: 6px;
+  }
 }

@@ -3,8 +3,10 @@
     flex-direction: column;
     gap: 15px;
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 60px 60px;
-    
+
 }
 
 .header {

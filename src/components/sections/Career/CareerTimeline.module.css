@@ -1,5 +1,7 @@
 .container {
     background: #FFFFFF;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 80px 80px;
 }
 
@@ -38,7 +40,7 @@
 }
 
 .date {
-    font-size: clamp(13px, 1.5vw, 15px);
+    font-size: clamp(12px, 1.3vw, 14px);
     font-weight: 700;
     color: #E8674A;
     margin-bottom: 12px;
@@ -46,12 +48,15 @@
 }
 
 .title {
+    font-size: clamp(14px, 1.8vw, 17px);
+    font-weight: 700;
     padding-top: 4px;
     margin-bottom: 8px;
 }
 
 .description {
     flex: 1;
+    font-size: clamp(12px, 1.4vw, 14px);
     color: #666666;
 }
 

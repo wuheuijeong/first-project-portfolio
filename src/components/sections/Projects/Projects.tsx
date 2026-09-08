@@ -20,6 +20,7 @@ export default function Projects() {
           </div>
 
             <ul className={styles.projectList}>
+                {/* 카드 클릭 시 해당 프로젝트를 모달로 열기 */}
                 {projects.map((project) => (
                     <li key={project.id} onClick={() => setSelected(project)}>
                         <ProjectCard

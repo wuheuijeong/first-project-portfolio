@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 80px 80px;
     align-items: center;
     gap: 10px;
@@ -28,8 +30,15 @@
     word-break: keep-all;
 }
 
+@media (max-width: 1024px) {
+  .container {
+    padding: 60px 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    padding: 40px 20px;
   }
 }
