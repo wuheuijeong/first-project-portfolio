@@ -1,5 +1,6 @@
 import styles from "./Hero.module.css";
 import LinkButton from "../../ui/LinkButton/LinkButton";
+import myPhoto from "../../assets/my_photo.jpeg"
 
 
 export default function Hero() {
@@ -10,7 +11,7 @@ export default function Hero() {
                 디테일로 신뢰를 채웁니다<br />
             </h1>
 
-            <img src="src/assets/my_photo.jpeg" alt="프로필" className={styles.image} />
+            <img src={myPhoto} alt="프로필" className={styles.image} />
 
             <div className={styles.textBlock}>
                 <p className={styles.role}>Frontend Developer</p>
