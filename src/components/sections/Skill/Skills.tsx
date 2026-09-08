@@ -1,5 +1,6 @@
 import SkillBox from "./SkillBox";
 import styles from "./Skills.module.css";
+import heading from "../../../styles/SectionHeading.module.css";
 import { useState, useEffect } from "react";
 import { useSkills } from "../../../hooks/useSkills";
 
@@ -40,8 +41,8 @@ export default function Skills() {
     return (
         <div className={styles.container}>
             <div>
-                <h2 className={styles.header}>SKILL</h2>
-                <h3 className={styles.subheader}>기술 스택</h3>
+                <h2 className={heading.header}>SKILL</h2>
+                <h3 className={`${heading.subheader} ${styles.subheader}`}>기술 스택</h3>
             </div>
 
             <div className={styles.categoryTabs}>

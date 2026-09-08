@@ -9,17 +9,7 @@
     padding-bottom: 14px;
 }
 
-.header {
-    color: #E8674A;
-    font-size: clamp(18px, 3vw, 24px);
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
 .subHeader {
-    font-size: clamp(15px, 2.5vw, 20px);
-    font-weight: 700;
-    color: #1A1A1A;
     margin-bottom: 40px;
 }
 

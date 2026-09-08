@@ -2,6 +2,7 @@ import type { ActivityEntry, ActivityDetail } from "../../../types"
 import ActivityItem from "./ActivityItem";
 import ActivityDetailCard from "./ActivityDetailCard";
 import styles from "./Activity.module.css";
+import heading from "../../../styles/SectionHeading.module.css";
 import { useActiveSecton } from "../../../hooks/useActiveSection";
 
 // 타임라인에 표시할 활동 목록
@@ -114,8 +115,8 @@ export default function Activity() {
   return (
     <div className={styles.activityArea}>
       <div>
-        <h2 className={styles.header}>ACTIVITY</h2>
-        <h3 className={styles.subheader}>활동</h3>
+        <h2 className={heading.header}>ACTIVITY</h2>
+        <h3 className={`${heading.subheader} ${styles.subheader}`}>활동</h3>
       </div>
 
       <div className={styles.container}>
@@ -128,11 +129,18 @@ export default function Activity() {
 
             return (
               <div
-                className={styles.oneActivity}
+                className={`${styles.oneActivity} ${
+                  !activeId || isActive ? styles.active : styles.inactive
+                }`}
                 key={entry.id}
                 data-id={entry.id}
                 ref={setRef(entry.id)}
               >
+                <span
+                  className={`${styles.timelineDot} ${
+                    isActive ? styles.timelineDotActive : ""
+                  }`}
+                />
                 <div className={styles.activityItem}>
                   <ActivityItem entry={entry} />
                 </div>

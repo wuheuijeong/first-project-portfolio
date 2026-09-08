@@ -1,10 +1,9 @@
-
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import type { Project } from "../types";
 
 export function useProjects() {
-    
+
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -26,7 +25,10 @@ export function useProjects() {
                 stack: row.stack,
                 teamsize: row.team_size,
                 period: row.period,
-                imageUrl: row.img_url,
+                imageUrl: row.image_url,
+                galleryUrls: row.gallery_urls
+                    ? row.gallery_urls.split(",").map((url: string) => url.trim())
+                    : [],
                 detail: row.detail,
                 demoUrl: row.demo_url,
                 githubUrl: row.github_url,

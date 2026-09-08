@@ -121,6 +121,7 @@
 
 @media (max-width: 768px) {
   .chatBox {
+    flex: none;
     height: 320px;
     padding: 16px;
   }

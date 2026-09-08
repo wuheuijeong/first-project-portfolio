@@ -1,4 +1,5 @@
 import styles from "./CareerTimeline.module.css"
+import heading from "../../../styles/SectionHeading.module.css";
 
 export default function CareerTimeliine() {
 
@@ -29,8 +30,8 @@ export default function CareerTimeliine() {
     return (
         <div className={styles.container}>
             <div>
-                <h2 className={styles.header}>CAREER</h2>
-                <h3 className={styles.subheader}>지금까지의 여정</h3>
+                <h2 className={heading.header}>CAREER</h2>
+                <h3 className={`${heading.subheader} ${styles.subheader}`}>지금까지의 여정</h3>
             </div>
 
             <div className={styles.career}>

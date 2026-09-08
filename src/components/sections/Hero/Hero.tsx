@@ -15,7 +15,7 @@ export default function Hero() {
             <div className={styles.textBlock}>
                 <p className={styles.role}>Frontend Developer</p>
                 <p className={styles.intro}>
-                    안녕하세요, 우희정입니다. React/TypeScript 기반 프로덕트를 만들고 데이터로 검증하는 일을 좋아합니다. 작은 디테일이 큰 신뢰를 만든다고 믿어요.
+                    안녕하세요, 우희정입니다. React/TypeScript 기반 프로덕트를 만들고 데이터로 검증하는 일을 좋아합니다. 작은 디테일이 큰 신뢰를 만든다고 믿기에, 화면 하나를 만들 때도 실제로 그 화면을 쓰는 사람의 입장에서 다시 한번 생각해보려 합니다. 반복되는 비효율을 발견하면 그냥 넘기지 않고 코드로 직접 해결해보는 편이고, 그 과정에서 얻은 경험을 다음 문제 해결에 쌓아가고 있습니다.
                 </p>
 
                 {/* 연락처 및 외부 링크 모음 */}

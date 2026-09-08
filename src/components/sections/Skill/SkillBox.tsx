@@ -7,13 +7,14 @@ interface SkillBoxProps {
 }
 
 export default function SkillBox({ title, description }: SkillBoxProps) {
-  // 매핑에 없는 기술이면 기본 아이콘으로 대체
-  const IconComponent = skillIconMap[title];
+  const entry = skillIconMap[title];
+  const IconComponent = entry?.icon;
+  const iconColor = entry?.color ?? "#999999";
 
   return (
     <div className={styles.skillbox}>
       <div className={styles.boxheader}>
-        {IconComponent ? <IconComponent size={20} /> : <span>🔧</span>}
+        {IconComponent ? <IconComponent size={20} color={iconColor} /> : <span>🔧</span>}
         <span>{title}</span>
       </div>
       <p className={styles.boxdescription}>{description}</p>

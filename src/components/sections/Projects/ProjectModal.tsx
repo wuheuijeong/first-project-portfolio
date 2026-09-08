@@ -9,11 +9,13 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+  console.log("project 데이터:", project);
+  console.log("galleryUrls:", project.galleryUrls);
 
   useEffect(() => {
     document.body.style.overflow = "hidden"; //모달 열려있는 동안 배경 스크롤 금지
 
-    return() => {
+    return () => {
       document.body.style.overflow = ""; // 모달 닫히면 다시 스크롤 가능하도록
     };
   }, []);
@@ -60,7 +62,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <p className={styles.summary}>{project.summary}</p>
 
           <div className={styles.gallery}>
-            {project.imageUrl?.map((url, idx) => (
+            {project.galleryUrls?.map((url, idx) => (
               <img key={idx} src={url} alt={`${project.title} 이미지 ${idx + 1}`} className={styles.galleryImage} />
             ))}
           </div>

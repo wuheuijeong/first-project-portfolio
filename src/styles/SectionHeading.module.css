@@ -1,0 +1,14 @@
+/* 모든 섹션에서 공통으로 사용하는 header/subheader 스타일 */
+
+.header {
+    color: #E8674A;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.subheader {
+    font-size: clamp(15px, 2.5vw, 20px);
+    font-weight: 700;
+    color: #1A1A1A;
+}

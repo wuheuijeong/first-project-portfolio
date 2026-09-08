@@ -16,6 +16,7 @@ export interface ProjectCardProps {
 }
 
 export default function ProjectCard({title, summary, role, stack, teamsize, period, imageUrl, demoUrl, githubUrl}: ProjectCardProps) {
+    console.log("imageUrl:", imageUrl, "length:", imageUrl?.length, typeof imageUrl);
     return (
         <div className={styles.projectcard}>
             <div className={styles.layout}>

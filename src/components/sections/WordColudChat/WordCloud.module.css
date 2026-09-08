@@ -67,20 +67,21 @@
   border-color: #3182f6;
 }
 
+@media (max-width: 1024px) {
+  .cloud {
+    height: 380px;
+    padding: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .cloud {
+    flex: none;
     height: 320px;
     padding: 20px;
   }
 
   .questionBubble {
     padding: 10px 16px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .cloud {
-    height: 380px;
-    padding: 30px;
   }
 }

@@ -3,6 +3,7 @@ import { useState } from "react";
 import type { Project } from "../../../types";
 import ProjectModal from "./ProjectModal";
 import styles from "./Projects.module.css"
+import heading from "../../../styles/SectionHeading.module.css";
 import { useProjects } from "../../../hooks/useProjects";
 
 export default function Projects() {
@@ -15,8 +16,8 @@ export default function Projects() {
     return (
         <div className = {styles.container}>
           <div className={styles.containerHeader}>
-            <h2 className={styles.header}>PROJECTS</h2>
-            <h3 className={styles.subHeader}>프로젝트</h3>
+            <h2 className={heading.header}>PROJECTS</h2>
+            <h3 className={`${heading.subheader} ${styles.subHeader}`}>프로젝트</h3>
           </div>
 
             <ul className={styles.projectList}>
@@ -31,7 +32,7 @@ export default function Projects() {
                             stack={project.stack}
                             teamsize={project.teamsize}
                             period={project.period}
-                            imageUrl={project.imageUrl?.[0]}
+                            imageUrl={project.imageUrl}
                             detail={project.detail}
                             demoUrl={project.demoUrl}
                             githubUrl={project.githubUrl} 
