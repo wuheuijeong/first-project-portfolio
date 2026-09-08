@@ -1,6 +1,6 @@
 import styles from "./Hero.module.css";
 import LinkButton from "../../ui/LinkButton/LinkButton";
-import myPhoto from "../../assets/my_photo.jpeg"
+import myPhoto from "../../../assets/my_photo.jpeg"
 
 
 export default function Hero() {
