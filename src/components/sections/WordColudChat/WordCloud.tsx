@@ -10,8 +10,23 @@ interface WordCloudProps {
 interface Position {
   top: string;
   left: string;
-  fontSize: number;
+  sizeLevel: 0 | 1 | 2;
   delay: number;
+}
+
+// 매번 새로 뽑는 랜덤 weight의 범위 (넓게 설정하여 크기 조합이 눈에 띄게 달라지도록 함)
+const MIN_RANDOM_WEIGHT = 1;
+const MAX_RANDOM_WEIGHT = 6;
+
+function getRandomWeight() {
+  return Math.floor(Math.random() * (MAX_RANDOM_WEIGHT - MIN_RANDOM_WEIGHT + 1)) + MIN_RANDOM_WEIGHT;
+}
+
+// weight를 3단계 크기 구간(0: 가장 큼, 2: 중간, 1: 가장 작음)으로 매핑
+function getSizeLevel(weight: number): 0 | 1 | 2 {
+  if (weight >= 5) return 0;
+  if (weight >= 3) return 2;
+  return 1;
 }
 
 export default function WordCloud({ keywords, onKeywordSelect }: WordCloudProps) {
@@ -19,37 +34,24 @@ export default function WordCloud({ keywords, onKeywordSelect }: WordCloudProps)
   const [positions, setPositions] = useState<Record<string, Position>>({});
   const cloudRef = useRef<HTMLDivElement>(null);
 
-  // 컨테이너의 실제 크기와 키워드 개수를 기준으로 행/열, 위치, 폰트 크기를 계산
+  // 키워드 개수를 기준으로 행/열과 위치를 계산하고, 크기 구간은 매번 랜덤으로 새로 뽑음
   useEffect(() => {
     const updatePositions = () => {
-      const containerWidth = cloudRef.current?.offsetWidth ?? window.innerWidth;
-      const containerHeight = cloudRef.current?.offsetHeight ?? 400;
       const cols = window.innerWidth <= 768 ? 2 : 3;
 
       const totalRows = Math.ceil(keywords.length / cols);
       const rowGap = 90 / totalRows;
       const colGap = 100 / cols;
-      const colWidthPx = (containerWidth * colGap) / 100;
-      const rowHeightPx = (containerHeight * rowGap) / 100;
 
       const positioned: Record<string, Position> = {};
       keywords.forEach((kw, idx) => {
         const row = Math.floor(idx / cols);
         const col = idx % cols;
 
-        // 배정된 열 너비와 행 높이를 넘지 않도록 텍스트 길이 기준으로 폰트 크기 상한을 계산
-        const idealFontSize = 24 + kw.weight * 4;
-        const maxFontSizeByWidth = (colWidthPx * 0.85) / (kw.text.length * 0.95);
-        const maxFontSizeByHeight = rowHeightPx * 0.6;
-        const fontSize = Math.max(
-          12,
-          Math.min(idealFontSize, maxFontSizeByWidth, maxFontSizeByHeight)
-        );
-
         positioned[kw.id] = {
           top: `${5 + row * rowGap + Math.random() * (rowGap * 0.3)}%`,
           left: `${2 + col * colGap + Math.random() * (colGap * 0.2)}%`,
-          fontSize,
+          sizeLevel: getSizeLevel(getRandomWeight()),
           delay: idx * 0.4,
         };
       });
@@ -76,12 +78,12 @@ export default function WordCloud({ keywords, onKeywordSelect }: WordCloudProps)
         return (
           <button
             key={kw.id}
+            data-size={pos.sizeLevel}
             className={`${styles.keyword} ${activeKeywordId === kw.id ? styles.keywordActive : ""}`}
             style={{
               position: "absolute",
               top: pos.top,
               left: pos.left,
-              fontSize: `${pos.fontSize}px`,
               animationDelay: `${pos.delay}s`,
             }}
             onClick={() => handleClick(kw)}

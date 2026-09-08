@@ -10,12 +10,28 @@
 }
 
 .keyword {
-  font-weight: 800;
-  color: #E8674A;
   cursor: pointer;
   white-space: nowrap;
   transition: color 0.2s, transform 0.3s;
   animation: floatMovement 4s ease-in-out infinite alternate;
+}
+
+.keyword[data-size='0'] {
+  font-size: 40px;
+  font-weight: 800;
+  color: #E8674A;
+}
+
+.keyword[data-size='1'] {
+  font-size: 23px;
+  font-weight: 600;
+  color: #9aa3af;
+}
+
+.keyword[data-size='2'] {
+  font-size: 32px;
+  font-weight: 800;
+  color: #667080;
 }
 
 .keyword:hover {
@@ -72,6 +88,18 @@
     height: 380px;
     padding: 30px;
   }
+
+  .keyword[data-size='0'] {
+    font-size: 34px;
+  }
+
+  .keyword[data-size='1'] {
+    font-size: 19px;
+  }
+
+  .keyword[data-size='2'] {
+    font-size: 27px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -79,6 +107,18 @@
     flex: none;
     height: 320px;
     padding: 20px;
+  }
+
+  .keyword[data-size='0'] {
+    font-size: 28px;
+  }
+
+  .keyword[data-size='1'] {
+    font-size: 16px;
+  }
+
+  .keyword[data-size='2'] {
+    font-size: 22px;
   }
 
   .questionBubble {
