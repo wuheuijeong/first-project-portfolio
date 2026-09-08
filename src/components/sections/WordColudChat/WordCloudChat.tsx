@@ -55,7 +55,7 @@ export default function WordcloudChat() {
   const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>([]);
 
   const sendMessage = async (question: string) => {
-    setSuggestedQuestions([]); // 질문 보내면 추천 질문은 사라지게
+    setSuggestedQuestions([]); // 질문 보내면 추천 질문은 사라지게 설정
     setMessages((prev) => [...prev, { role: "user", content: question }]);
     setLoading(true);
 

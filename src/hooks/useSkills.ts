@@ -9,8 +9,6 @@ export function useSkills() {
     useEffect(() => {
         async function fetchSkills() {
             const { data, error } = await supabase.from("skills").select("*");
-            console.log("skills 데이터:", data);
-            console.log("skills 에러:", error);
 
             if (error) {
                 console.error(error);
