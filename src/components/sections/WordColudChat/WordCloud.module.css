@@ -17,19 +17,19 @@
 }
 
 .keyword[data-size='0'] {
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 800;
   color: #E8674A;
 }
 
 .keyword[data-size='1'] {
-  font-size: 23px;
+  font-size: 16px;
   font-weight: 600;
   color: #9aa3af;
 }
 
 .keyword[data-size='2'] {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 800;
   color: #667080;
 }
@@ -90,15 +90,15 @@
   }
 
   .keyword[data-size='0'] {
-    font-size: 34px;
+    font-size: 24px;
   }
 
   .keyword[data-size='1'] {
-    font-size: 19px;
+    font-size: 14px;
   }
 
   .keyword[data-size='2'] {
-    font-size: 27px;
+    font-size: 19px;
   }
 }
 
@@ -110,15 +110,15 @@
   }
 
   .keyword[data-size='0'] {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .keyword[data-size='1'] {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .keyword[data-size='2'] {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .questionBubble {

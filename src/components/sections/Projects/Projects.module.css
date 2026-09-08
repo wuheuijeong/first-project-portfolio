@@ -13,9 +13,41 @@
     margin-bottom: 40px;
 }
 
-.projectList {
-
+.detail h2 {
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-top: 20px;
+  margin-bottom: 8px;
 }
+
+.detail h2:first-child {
+  margin-top: 0;
+}
+
+.detail p {
+  font-size: clamp(12px, 1.3vw, 13px);
+  color: #5e5d5d;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.detail ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.detail li {
+  font-size: clamp(12px, 1.3vw, 13px);
+  color: #5e5d5d;
+  line-height: 1.8;
+}
+
+.detail strong {
+  color: #E8674A;
+  font-weight: 700;
+}
+
 
 @media (max-width: 1024px) {
   .container {

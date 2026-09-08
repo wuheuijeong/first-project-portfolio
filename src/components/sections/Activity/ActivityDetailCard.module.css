@@ -20,7 +20,8 @@
 
 .detail {
     font-size: clamp(12px, 1.4vw, 14px);
-    color: #5e5d5d
+    color: #5e5d5d;
+    word-break: keep-all;
 }
 
 .listli {

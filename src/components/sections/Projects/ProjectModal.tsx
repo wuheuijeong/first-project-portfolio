@@ -2,6 +2,8 @@ import type { Project } from "../../../types"
 import styles from "./ProjectModal.module.css"
 import TechTag from "../../ui/TechTag/TechTag";
 import { useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+
 
 interface ProjectModalProps {
   project: Project;
@@ -69,7 +71,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         <div className={styles.scrollArea}>
-          <p className={styles.detail}>{project.detail}</p>
+          <div className={styles.detail}>
+            <ReactMarkdown>{project.detail}</ReactMarkdown>
+          </div>
         </div>
       </div>
     </div>
