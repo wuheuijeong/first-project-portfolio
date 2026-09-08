@@ -96,8 +96,8 @@ function clampRect(rect: Rect, containerWidth: number, containerHeight: number):
 }
 
 // 중심에서 시작해 각도를 늘리며 반지름을 서서히 키우는 나선형 경로를 따라
-// 기존에 배치된 사각형들과 겹치지 않는 첫 후보 위치를 찾는다.
-// 최대 반복 횟수 내에 겹치지 않는 자리를 못 찾으면, 그동안 발견한 가장 덜 겹치는 위치로 대체한다.
+// 기존에 배치된 사각형들과 겹치지 않는 첫 후보 위치를 찾는다
+// 최대 반복 횟수 내에 겹치지 않는 자리를 못 찾으면, 그동안 발견한 가장 덜 겹치는 위치로 대체한다
 function findSpiralPosition(
   w: number,
   h: number,
