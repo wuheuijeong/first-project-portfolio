@@ -19,19 +19,33 @@ export default function WordCloud({ keywords, onKeywordSelect }: WordCloudProps)
   const [positions, setPositions] = useState<Record<string, Position>>({});
 
   useEffect(() => {
-    const positioned: Record<string, Position> = {};
-    keywords.forEach((kw, idx) => {
-      const cols = 2;
-      const row = Math.floor(idx / cols);
-      const col = idx % cols;
-      positioned[kw.id] = {
-        top: `${15 + row * 35 + Math.random() * 10}%`,
-        left: `${20 + col * 45 + Math.random() * 10}%`,
-        fontSize: 24 + kw.weight * 4,
-        delay: idx * 0.4,
-      };
-    });
-    setPositions(positioned);
+    const updatePositions = () => {
+      const width = window.innerWidth;
+      let scale = 1;
+      if (width <= 768) {
+        scale = 0.45;
+      } else if (width <= 1024) {
+        scale = 0.7;
+      }
+
+      const positioned: Record<string, Position> = {};
+      keywords.forEach((kw, idx) => {
+        const cols = 2;
+        const row = Math.floor(idx / cols);
+        const col = idx % cols;
+        positioned[kw.id] = {
+          top: `${15 + row * 35 + Math.random() * 10}%`,
+          left: `${20 + col * 45 + Math.random() * 10}%`,
+          fontSize: (24 + kw.weight * 4) * scale,
+          delay: idx * 0.4,
+        };
+      });
+      setPositions(positioned);
+    };
+
+    updatePositions();
+    window.addEventListener("resize", updatePositions);
+    return () => window.removeEventListener("resize", updatePositions);
   }, [keywords]);
 
   const handleClick = (kw: Keyword) => {

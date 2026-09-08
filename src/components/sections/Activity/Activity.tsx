@@ -91,25 +91,25 @@ const activityDetails: ActivityDetail[] = [
 ];
 
 export default function Activity() {
-
     const { activeId, activeTop, setRef } = useActiveSecton();
 
     return (
         <div className={styles.activityArea}>
-
             <div>
                 <h2 className={styles.header}>ACTIVITY</h2>
                 <h3 className={styles.subheader}>활동</h3>
             </div>
 
-
             <div className={styles.container}>
                 <div className={styles.timeline} />
                 <div className={styles.timebox}>
-                    {activities.map((entry) => {                        
+                    {activities.map((entry) => {
+                        const isActive = entry.id === activeId;
+                        const detail = activityDetails.find((d) => d.entryId === entry.id);
+
                         return (
-                        <div 
-                        className={styles.oneActivity} 
+                        <div
+                        className={styles.oneActivity}
                         key={entry.id}
                         data-id={entry.id}
                         ref={setRef(entry.id)}
@@ -117,6 +117,12 @@ export default function Activity() {
                             <div className={styles.activityItem}>
                                 <ActivityItem entry={entry} />
                             </div>
+
+                            {isActive && detail && (
+                                <div className={styles.inlineDetail}>
+                                    <ActivityDetailCard detail={detail} />
+                                </div>
+                            )}
                         </div>
                         );
                     })}
@@ -131,9 +137,6 @@ export default function Activity() {
                     </div>
                 )}
             </div>
-
-
         </div>
     )
-
 }

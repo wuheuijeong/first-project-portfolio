@@ -7,12 +7,6 @@
     gap: 10px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-}
-
 .closing {
     display: flex;
     flex-direction: column;
@@ -25,9 +19,17 @@
     font-size: 24px;
     font-weight: 800;
     color: #1A1A1A;
+    word-break: keep-all;
 }
 
 .subMessage {
     font-size: 14px;
     color: #666666;
+    word-break: keep-all;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 }

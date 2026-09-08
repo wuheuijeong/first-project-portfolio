@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { Keyword, Message } from "../../../types";
 import WordCloud from "./WordCloud";
 import ChatWindow from "./ChatWindow";
-import styles from "./WordcloudChat.module.css";
+import styles from "./WordCloudChat.module.css";
 import { askQuestion } from "../../../lib/ai";
 import aboutMeContent from "../../../data/aboutMe.md?raw";
 

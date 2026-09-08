@@ -7,6 +7,13 @@
     padding: 80px 80px;
 }
 
+.image {
+  border-radius: 16px;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
 .bottomRow {
     display: flex;
     line-height: 1.9;
@@ -25,7 +32,7 @@
 
 .title {
     text-align: left;
-    font-size: 70px;
+    font-size: clamp(30px, 8vw, 70px);
     letter-spacing: -0.02em;
     font-weight: 900;
     line-height: 1.1;
@@ -33,13 +40,13 @@
 }
 
 .role {
-    font-size: 30px;
+    font-size: clamp(18px, 3.5vw, 30px);
     font-weight: 700;
     color: #E8674A;
 }
 
 .intro {
-    font-size: 14px;
+    font-size: clamp(12px, 1.8vw, 14px);
     color: #666666;
     line-height: 1.6;
 }
@@ -53,4 +60,58 @@
 
 .image {
     border-radius: 16px;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 60px 40px;
+    gap: 50px;
+  }
+
+  .title {
+    font-size: 54px;
+  }
+
+  .role {
+    font-size: 26px;
+  }
+
+  .image {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+    gap: 32px;
+  }
+
+  .bottomRow {
+    gap: 16px;
+  }
+
+  .left {
+    max-width: 60%;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .role {
+    font-size: 18px;
+  }
+
+  .intro {
+    font-size: 12px;
+  }
+
+  .image {
+    max-width: 100px;
+  }
+
+  .linkGroup {
+    gap: 8px;
+  }
 }

@@ -47,7 +47,7 @@
   color: #FFFFFF;
   padding: 10px 16px;
   border-radius: 16px 16px 4px 16px;
-  font-size: 14px;
+  font-size: clamp(13px, 1.5vw, 14px);
   max-width: 80%;
 }
 
@@ -57,7 +57,7 @@
   color: #1A1A1A;
   padding: 10px 16px;
   border-radius: 16px 16px 16px 4px;
-  font-size: 14px;
+  font-size: clamp(13px, 1.5vw, 14px);
   max-width: 80%;
 }
 
@@ -74,7 +74,7 @@
   background: transparent;
   border: 1.5px dashed #C0C0C0;
   border-radius: 16px 16px 16px 4px;
-  font-size: 14px;
+  font-size: clamp(13px, 1.5vw, 14px);
   color: #888888;
   text-align: left;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
@@ -96,7 +96,7 @@
   padding: 10px 16px;
   border: 1px solid #E0E0E0;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: clamp(13px, 1.5vw, 14px);
   outline: none;
 }
 
@@ -109,6 +109,6 @@
   background: #E8674A;
   color: #FFFFFF;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: clamp(13px, 1.5vw, 14px);
   font-weight: 700;
 }

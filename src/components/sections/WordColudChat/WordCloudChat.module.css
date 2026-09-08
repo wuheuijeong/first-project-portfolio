@@ -9,13 +9,13 @@
 
 .header {
     color: #E8674A;
-    font-size: 24px;
+    font-size: clamp(18px, 3vw, 24px);
     font-weight: 700;
     margin-bottom: 4px;
 }
 
 .subheader {
-    font-size: 20px;
+    font-size: clamp(15px, 2.5vw, 20px);
     font-weight: 700;
     color: #1A1A1A;
     margin-bottom: 4px;
@@ -25,4 +25,24 @@
   display: flex;
   gap: 24px;
   align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 50px 30px;
+  }
+
+  .layout {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
 }

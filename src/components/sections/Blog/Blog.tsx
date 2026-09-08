@@ -14,10 +14,10 @@ export default function Blog() {
             <h2 className={styles.header}>BLOG</h2>
             <h3 className={styles.subheader}>공부하고 기록한 글들</h3>
 
-            <ul className={styles.blogcard}>
+            <ul className={styles.list}>
                 {posts.map((post) => (
-                <BlogCard key={post.id} post={post} />
-            ))}
+                    <BlogCard key={post.id} post={post} />
+                ))}
             </ul>
         </div>
     )
