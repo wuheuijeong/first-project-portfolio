@@ -1,5 +1,8 @@
 # First Project Portfolio
 
+## 0. 배포 사이트
+[포트폴리오 사이트 방문하기] (https://wuheuijeong.vercel.app/)
+
 ## 1. 프로젝트 소개
 
 React와 TypeScript로 만든 개인 포트폴리오 웹사이트입니다. 네비게이션 클릭이나 스크롤로 섹션을 이동하는 원페이지(One Page) 스크롤 구조로 구성되어 있으며, Hero부터 Contact까지 하나의 페이지 안에서 자기소개, 경력, 기술 스택, 활동, 프로젝트, 블로그 글을 순서대로 보여줍니다.
