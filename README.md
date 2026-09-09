@@ -1,7 +1,8 @@
 # First Project Portfolio
 
 ## 0. 배포 사이트
-[포트폴리오 사이트 방문하기] (https://wuheuijeong.vercel.app/)
+[포트폴리오 사이트 방문하기](https://wuheuijeong.vercel.app/)
+[1조 발표 자료 및 시연 영상(구글 드라이브)](https://drive.google.com/drive/folders/12OPAia8zGgKW7JhQRlS3nfi0nd0XWPRa?usp=sharing)
 
 ## 1. 프로젝트 소개
 
