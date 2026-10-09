@@ -11,10 +11,6 @@
     gap: 16px;
 }
 
-.subheader {
-    margin-bottom: 40px;
-}
-
 .categoryGroup {
     margin-bottom: 32px; 
 }
@@ -41,11 +37,13 @@
     padding: 8px 20px;
     border-radius: 999px;
     cursor: pointer;
-    color: #999999;
+    color: #6B7280;
     background-color: #F2F4F6;
-    opacity: 0.5;
-    filter: grayscale(100%);
-    transition: color 0.3s, opacity 0.3s, background-color 0.3s filter 0.3s;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.tab:hover {
+    color: #1A1A1A;
 }
 
 .activeTab {
@@ -70,5 +68,16 @@
 @media (max-width: 768px) {
   .container {
     padding: 40px 20px;
+  }
+
+  .categoryTabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .tab,
+  .activeTab {
+    flex-shrink: 0;
   }
 }

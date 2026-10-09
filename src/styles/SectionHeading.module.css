@@ -11,4 +11,5 @@
     font-size: clamp(15px, 2.5vw, 20px);
     font-weight: 700;
     color: #1A1A1A;
+    margin-bottom: 32px;
 }

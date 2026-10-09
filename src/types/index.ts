@@ -4,13 +4,22 @@ export interface ActivityEntry {
   date: string;
   title: string;
   summary: string;
+  highlight?: string; // 펼칠 수 없는 항목에 바로 보여줄 핵심 한 줄
+}
+
+export interface ActivityPoint {
+  label: string;
+  text: string;
 }
 
 export interface ActivityDetail {
   entryId: string;
-  fulltitle: string;
-  role: string;
-  details: string[];
+  org: string;
+  roleNote?: string; // entry.type과 다른 새로운 정보일 때만 표시
+  metrics?: string[];
+  points: ActivityPoint[];
+  skills?: string[];
+  relatedProject?: boolean; // Projects 섹션으로 이동하는 링크 표시 여부
 }
 
 export interface Keyword {

@@ -19,7 +19,7 @@
 
 .summary {
     font-size: clamp(12px, 1.4vw, 14px);
-    color: #999999;
+    color: #6B7280;
 }
 
 .meta {
@@ -29,6 +29,17 @@
     color: #666666;
 }
 
+.arrow {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.blogcard:hover .arrow {
+    transform: translateX(4px);
+}
+
 @media (max-width: 768px) {
   .blogcard {
     padding: 18px 0;
@@ -36,5 +47,10 @@
 
   .content {
     gap: 6px;
+  }
+
+  .arrow {
+    width: 28px;
+    height: 28px;
   }
 }

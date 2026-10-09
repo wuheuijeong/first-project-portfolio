@@ -5,10 +5,6 @@
     padding: 80px 80px;
 }
 
-.subheader {
-    margin-bottom: 40px;
-}
-
 .career {
     display: flex;
     gap: 60px;
@@ -32,7 +28,7 @@
 .date {
     font-size: clamp(12px, 1.3vw, 14px);
     font-weight: 700;
-    color: #E8674A;
+    color: #C9502F;
     margin-bottom: 12px;
     padding-bottom: 4px;
 }

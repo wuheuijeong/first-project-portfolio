@@ -1,7 +1,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
     min-width: 0;
 }
 
@@ -12,16 +11,26 @@
     color: #999999;
     font-size: clamp(11px, 1.3vw, 13px);
     align-items: center;
+    margin-bottom: 8px;
 }
 
 .title {
     display: flex;
     font-size: clamp(15px, 1.8vw, 18px);
     font-weight: 600;
+    text-wrap: pretty;
+    margin: 0 0 4px;
 }
 
 .summary {
     font-size: clamp(12px, 1.4vw, 14px);
     color: #414141;
     font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.highlight {
+    font-size: clamp(12px, 1.4vw, 14px);
+    color: #B8462F;
+    font-weight: 600;
 }

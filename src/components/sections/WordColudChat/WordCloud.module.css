@@ -12,6 +12,7 @@
 .keyword {
   cursor: pointer;
   white-space: nowrap;
+  padding: 4px 6px;
   transition: color 0.2s, transform 0.3s;
   animation: floatMovement 4s ease-in-out infinite alternate;
 }
@@ -25,7 +26,7 @@
 .keyword[data-size='1'] {
   font-size: 16px;
   font-weight: 600;
-  color: #9aa3af;
+  color: #6B7280;
 }
 
 .keyword[data-size='2'] {
@@ -79,8 +80,8 @@
 }
 
 .questionBubble:hover {
-  background: #EEF4FF;
-  border-color: #3182f6;
+  background: #FFF6F4;
+  border-color: #E8674A;
 }
 
 @media (max-width: 1024px) {

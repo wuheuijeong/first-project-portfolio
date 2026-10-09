@@ -7,20 +7,14 @@ import TechTag from "../../ui/TechTag/TechTag";
 
 interface ActivityItemProps {
     entry: ActivityEntry;
+    hideSummary?: boolean;
 }
 
-// interface ActivityDetail {
-//     entryId: string;
-//     fulltitle: string;
-//     role: string;
-//     details: string[]
-// }
+export default function ActivityItem({ entry, hideSummary }: ActivityItemProps) {
 
-export default function ActivityItem({ entry }: ActivityItemProps) {
-    
     return (
         <div className={styles.container}>
-            
+
             <div className={styles.firstLine}>
                 <TechTag key={entry.type}>{entry.type}</TechTag>
                 <p>{entry.date}</p>
@@ -28,7 +22,11 @@ export default function ActivityItem({ entry }: ActivityItemProps) {
 
             <div className={styles.title}>{entry.title}</div>
 
-            <div className={styles.summary}>{entry.summary}</div>
+            {!hideSummary && <div className={styles.summary}>{entry.summary}</div>}
+
+            {entry.highlight && (
+                <div className={styles.highlight}>{entry.highlight}</div>
+            )}
 
         </div>
     )

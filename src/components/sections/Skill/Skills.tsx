@@ -1,36 +1,15 @@
 import SkillBox from "./SkillBox";
 import styles from "./Skills.module.css";
 import heading from "../../../styles/SectionHeading.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSkills } from "../../../hooks/useSkills";
 
 
-const categories = ["Frontend", "Backend", "Data"];
-const AUTO_INTERVAL = 3000;
-const HOLD_DURATION = 10000;
+const categories = ["Frontend", "Backend", "Data", "Tools"];
 
 export default function Skills() {
     const { skills, loading } = useSkills();
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isHeld, setIsHeld] = useState(false);
-
-    // 클릭으로 고정되지 않은 동안 카테고리를 자동으로 순환
-    useEffect(() => {
-        if (isHeld) return;
-
-        const timer = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % categories.length);
-        }, AUTO_INTERVAL);
-
-        return () => clearInterval(timer);
-    }, [isHeld]);
-
-    // 탭 클릭 시 해당 카테고리로 고정하고 일정 시간 뒤 자동 순환 재개
-    const handleClick = (idx: number) => {
-        setCurrentIndex(idx);
-        setIsHeld(true);
-        setTimeout(() => setIsHeld(false), HOLD_DURATION);
-    };
 
     if (loading) return <p>로딩 중...</p>;
 
@@ -42,7 +21,7 @@ export default function Skills() {
         <div className={styles.container}>
             <div>
                 <h2 className={heading.header}>SKILL</h2>
-                <h3 className={`${heading.subheader} ${styles.subheader}`}>기술 스택</h3>
+                <h3 className={heading.subheader}>기술 스택</h3>
             </div>
 
             <div className={styles.categoryTabs}>
@@ -50,7 +29,7 @@ export default function Skills() {
                     <button
                         key={category}
                         className={idx === currentIndex ? styles.activeTab : styles.tab}
-                        onClick={() => handleClick(idx)}
+                        onClick={() => setCurrentIndex(idx)}
                     >
                         {category.toUpperCase()}
                     </button>

@@ -2,8 +2,8 @@
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  gap: clamp(6px, 1vw, 8px);
-  padding: clamp(6px, 1.2vw, 10px) clamp(12px, 2.2vw, 18px) clamp(6px, 1.2vw, 10px) clamp(10px, 2vw, 16px);
+  gap: 8px;
+  padding: 8px 14px;
 
   background: #F2F4F6;
   border-radius: 999px;
@@ -12,7 +12,7 @@
   color: #444444;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-sm);
 }
 
 .linkButton:hover {

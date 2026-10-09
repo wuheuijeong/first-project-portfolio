@@ -124,9 +124,29 @@ const keywords: Keyword[] = [
     text: "성장방향",
     weight: 4,
     questions: [
-      "어떤 프론트엔드 개발자가 되고 싶나요?",
+      "어떤 PM이 되고 싶나요?",
       "지금 집중하고 있는 역량은 무엇인가요?",
       "5년 뒤 어떤 모습이길 바라나요?",
+    ],
+  },
+  {
+    id: "13",
+    text: "상품기획",
+    weight: 6,
+    questions: [
+      "상품을 직접 기획해본 경험이 있나요?",
+      "가격 체계나 수익 모델을 설계해본 적이 있나요?",
+      "아이디어를 사업 안건으로 발전시킨 경험을 소개해주세요.",
+    ],
+  },
+  {
+    id: "14",
+    text: "사업성분석",
+    weight: 5,
+    questions: [
+      "사업성을 분석할 때 어떤 기준을 보나요?",
+      "경쟁사 분석은 어떻게 접근하나요?",
+      "데이터로 사업 기회를 검증한 경험이 있나요?",
     ],
   },
 ];
@@ -155,8 +175,10 @@ export default function WordcloudChat() {
 
   return (
     <div className={styles.container}>
-      <h2 className={heading.header}>ASK ME</h2>
-      <h3 className={`${heading.subheader} ${styles.subheader}`}>키워드로 알아보는 나</h3>
+      <div>
+        <h2 className={heading.header}>ASK ME</h2>
+        <h3 className={heading.subheader}>키워드로 알아보는 나</h3>
+      </div>
 
       <div className={styles.layout}>
         <WordCloud keywords={keywords} onKeywordSelect={handleKeywordSelect} />

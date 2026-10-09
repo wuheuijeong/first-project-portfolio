@@ -17,7 +17,7 @@ export default function Projects() {
         <div className = {styles.container}>
           <div className={styles.containerHeader}>
             <h2 className={heading.header}>PROJECTS</h2>
-            <h3 className={`${heading.subheader} ${styles.subHeader}`}>프로젝트</h3>
+            <h3 className={heading.subheader}>프로젝트</h3>
           </div>
 
             <ul className={styles.projectList}>

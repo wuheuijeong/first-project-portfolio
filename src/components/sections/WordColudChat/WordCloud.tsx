@@ -69,8 +69,9 @@ function estimateBoxSize(text: string, sizeLevel: 0 | 1 | 2) {
     textWidth = text.length * fontSize * 0.87;
   }
 
-  const width = textWidth + 4;
-  const height = fontSize * 1.45 + 2;
+  // 버튼 패딩(좌우 6px, 상하 4px)과 키워드 간 최소 간격을 함께 확보
+  const width = textWidth + 12 + 12;
+  const height = fontSize * 1.45 + 8 + 12;
   return { width, height };
 }
 

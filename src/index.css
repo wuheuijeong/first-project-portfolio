@@ -4,10 +4,18 @@
     padding: 0;
 }
 
+:root {
+    --radius-card: 16px;
+    --shadow-sm: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0px 8px 24px rgba(0, 0, 0, 0.08);
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   color: #333;
   line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -28,4 +36,12 @@ button {
 
 section {
     scroll-margin-top: 100px;
+}
+
+p, li, h3 {
+    text-wrap: pretty;
+}
+
+h1, h2 {
+    text-wrap: balance;
 }

@@ -1,16 +1,11 @@
 .container {
     display:flex;
     flex-direction: column;
-    gap: 15px;
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 60px;
+    padding: 80px 80px;
 
-}
-
-.subheader {
-    margin-bottom: 4px;
 }
 
 .layout {
@@ -21,7 +16,7 @@
 
 @media (max-width: 1024px) {
   .container {
-    padding: 50px 30px;
+    padding: 60px 40px;
   }
 
   .layout {

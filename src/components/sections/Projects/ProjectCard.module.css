@@ -1,51 +1,88 @@
 .projectcard {
+    position: relative;
     display: flex;
     background: #FFFFFF;
-    height: 160px;
+    min-height: 180px;
     border: 1px solid #F0F1F3;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-sm);
     margin-bottom: 30px;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.icon {
+.projectcard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.cardIcons {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 6px;
+    z-index: 1;
+}
+
+.iconButton {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-sm);
 }
 
 .layout {
     display: flex;
     gap: 20px;
-    align-items: flex-start;
+    align-items: stretch;
+    width: 100%;
 }
 
 .image {
   width: 280px;
-  height: 160px;
+  min-height: 180px;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   flex-shrink: 0;
   overflow: hidden;
   min-width: 200px;
+  background: #F3F4F6;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 .firstimage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6C63FF 0%, #3ECF8E 100%);
+  color: #FFFFFF;
+  font-size: 40px;
+  font-weight: 800;
 }
 
 .content {
     display:flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
-    padding-top: 15px;
+    padding: 24px 28px 24px 0;
+    min-width: 0;
 
 }
 
@@ -53,35 +90,30 @@
 /* 내부 내용 */
 
 .title {
-    font-size: clamp(14px, 1.8vw, 17px);
-    font-weight: 800;
-}
-
-.firstline {
-    display: flex;;
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
-
+    font-size: 18px;
+    font-weight: 700;
+    color: #1A1A1A;
 }
 
 .stackRow {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
 
 .secondline {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    font-size: clamp(10px, 1.1vw, 11px);
-    color: #666
+    font-size: 13px;
+    color: #6B7280;
 }
 
 .summary {
-    font-size: clamp(11px, 1.2vw, 12px);
-    color: #666666;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4B5563;
+    max-width: 560px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -102,7 +134,7 @@
 
 @media (max-width: 768px) {
   .projectcard {
-    height: auto;
+    min-height: auto;
   }
 
   .layout {
@@ -113,13 +145,8 @@
   .image {
     width: 100%;
     height: 160px;
+    min-height: 0;
     min-width: 0;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 0;
-  }
-
-  .firstimage {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     border-bottom-left-radius: 0;
@@ -127,10 +154,6 @@
 
   .content {
     padding: 15px;
-  }
-
-  .firstline {
-    flex-wrap: wrap;
   }
 
   .secondline {

@@ -9,10 +9,6 @@
     padding-bottom: 14px;
 }
 
-.subHeader {
-    margin-bottom: 40px;
-}
-
 .detail h2 {
   font-size: clamp(14px, 1.6vw, 16px);
   font-weight: 700;
