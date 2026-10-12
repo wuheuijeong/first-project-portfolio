@@ -13,14 +13,14 @@ const activities: ActivityEntry[] = [
     type: "학회",
     date: "2024.11",
     title: "한국항공우주학회 2024 추계학술대회",
-    summary: "UAM 수요예측 분석 연구 포스터 발표 및 논문 제출",
+    summary: "UAM 수요 예측 분석 연구 포스터 발표 및 논문 제출",
   },
   {
     id: "2",
     type: "연구",
     date: "2024.05 ~ 2024.11",
     title: "UROP 학부생 연구 참여",
-    summary: "성신여대 Spider Lab, 팀장으로 UAM 수요예측 분석 프로젝트 주도",
+    summary: "성신여대 Spider Lab, 팀장으로 UAM 수요 예측 분석 프로젝트 주도",
   },
   {
     id: "3",
@@ -63,7 +63,7 @@ const activityDetails: ActivityDetail[] = [
     roleNote: "제1저자, 팀장",
     metrics: ["설문 115명"],
     points: [
-      { label: "연구", text: "서울 지역 대학(원)생 대상 UAM 수요예측 분석 연구 설계" },
+      { label: "연구", text: "서울 지역 대학(원)생 대상 UAM 수요 예측 분석 연구 설계" },
       { label: "분석", text: "115명 설문 데이터를 Python으로 정제하고 분석, Matplotlib으로 시각화" },
       { label: "발표", text: "포스터 발표 및 논문 제출로 연구 성과를 학회에 공유" },
     ],

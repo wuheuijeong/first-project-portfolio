@@ -50,7 +50,7 @@ export default function Navbar() {
         <nav className={styles.navbar}>
             <div className={styles.navInner}>
                 <div className={styles.logo} onClick={() => handleNavClick("hero")}>
-                    우희정's portfolio
+                    HeuiJeong Wu
                 </div>
 
                 <ul className={styles.navList}>

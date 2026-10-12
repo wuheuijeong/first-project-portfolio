@@ -24,7 +24,7 @@ export default function CareerTimeliine() {
         {
             date: "2025.06",
             title: "카카오모빌리티 인턴",
-            description: "P&C플랫폼사업팀에서 9개월 간\n서비스 운영 데이터를 다루고,\n신규 사업모델 기획과\n발표까지 경험했습니다.",
+            description: "P&C플랫폼사업팀에서 9개월간\n서비스 운영 데이터를 다루고,\n신규 사업모델 기획과\n발표까지 경험했습니다.",
         },
         {
             date: "2026.02",
