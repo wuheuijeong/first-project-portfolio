@@ -14,7 +14,7 @@
 
 .line {
     position: absolute;
-    top: 35px;
+    top: 0;
     left: 0;
     right: 0;
     height: 0.5px;
@@ -22,13 +22,26 @@
 }
 
 .item {
+    position: relative;
     flex: 1;
+    padding-top: 16px;
+}
+
+.dot {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #E8674A;
+    border: 2px solid #FFFFFF;
 }
 
 .date {
     font-size: clamp(12px, 1.3vw, 14px);
     font-weight: 700;
-    color: #C9502F;
+    color: #E8674A;
     margin-bottom: 12px;
     padding-bottom: 4px;
 }
@@ -80,5 +93,11 @@
 
   .item {
     flex: none;
+    padding-top: 0;
+  }
+
+  .dot {
+    top: 6px;
+    left: -24px;
   }
 }

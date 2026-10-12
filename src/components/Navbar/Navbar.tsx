@@ -1,5 +1,5 @@
 import styles from "./Navbar.module.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // 네브바에 표시할 섹션 목록
 const NAV_ITEMS = [
@@ -14,6 +14,28 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeId, setActiveId] = useState("hero");
+
+    // 화면 중앙에 걸쳐있는 섹션을 감지해 해당 메뉴를 주황색으로 표시
+    useEffect(() => {
+        const sections = NAV_ITEMS.map((item) => document.getElementById(item.id)).filter(
+            (el): el is HTMLElement => el !== null
+        );
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveId(entry.target.id);
+                    }
+                });
+            },
+            { rootMargin: "-45% 0px -45% 0px" }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+        return () => observer.disconnect();
+    }, []);
 
     // 클릭한 섹션으로 스크롤 이동 후 메뉴 닫기
     const handleNavClick = (id: string) => {
@@ -34,7 +56,10 @@ export default function Navbar() {
                 <ul className={styles.navList}>
                     {NAV_ITEMS.map((item) => (
                         <li key={item.id}>
-                            <button className={styles.navLink} onClick={() => handleNavClick(item.id)}>
+                            <button
+                                className={item.id === activeId ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}
+                                onClick={() => handleNavClick(item.id)}
+                            >
                                 {item.label}
                             </button>
                         </li>

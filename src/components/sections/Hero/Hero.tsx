@@ -31,10 +31,10 @@ export default function Hero() {
 
                 {/* 연락처 및 외부 링크 모음 */}
                 <div className={styles.linkGroup}>
-                    <LinkButton href="mailto:..." external={false}>wuheuijeong@gmail.com</LinkButton>
+                    <LinkButton href="mailto:wuheuijeong@gmail.com" external={false}>wuheuijeong@gmail.com</LinkButton>
                     <LinkButton href="https://github.com/wuheuijeong">GitHub</LinkButton>
-                    <LinkButton href="https://velog.io/@wuheuijeong/posts">velog</LinkButton>
-                    <LinkButton href="https://linkedin.com/...">LinkedIn</LinkButton>
+                    {/* <LinkButton href="https://velog.io/@wuheuijeong/posts">velog</LinkButton> */}
+                    {/* <LinkButton href="https://linkedin.com/...">LinkedIn</LinkButton> */}
                 </div>
             </div>
         </div>

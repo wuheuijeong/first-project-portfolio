@@ -47,6 +47,10 @@
   color: #E8674A;
 }
 
+.navLinkActive {
+  color: #E8674A;
+}
+
 .menuToggle {
   display: none;
   background: none;

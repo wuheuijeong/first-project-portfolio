@@ -19,7 +19,7 @@ export default function CareerTimeliine() {
         {
             date: "2022.03",
             title: "성신여자대학교\nAI융합학부 입학",
-            description: "AI융합학부 주전공으로 대학 생활을 시작했습니다.",
+            description: "AI융합학부 주전공으로\n대학 생활을 시작했습니다.",
         },
         {
             date: "2025.06",
@@ -34,7 +34,7 @@ export default function CareerTimeliine() {
         {
             date: "2026.07",
             title: "현대오토에버 모빌리티\nSW 스쿨 웹/앱 4기",
-            description: "개발팀과 같은 언어로 소통할 수 있는 PM이 되기 위해 웹/앱 풀스택 과정을 수강하고 있습니다.",
+            description: "개발 구조를 이해하는 PM이 되고자\n웹/앱 풀스택 과정을 수강하고 있습니다.",
         },
     ];
 
@@ -49,6 +49,7 @@ export default function CareerTimeliine() {
                 <div className={styles.line} />
                 {items.map((item, idx) => (
                     <div key={idx} className={styles.item}>
+                        <span className={styles.dot} />
                         <p className={styles.date}>{item.date}</p>
                         <h3 className={styles.title}>{renderLines(item.title)}</h3>
                         <p className={styles.description}>{renderLines(item.description)}</p>

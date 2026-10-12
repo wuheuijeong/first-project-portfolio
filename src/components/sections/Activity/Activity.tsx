@@ -55,7 +55,7 @@ const activities: ActivityEntry[] = [
   },
 ];
 
-// 펼쳤을 때 보여줄 상세 내용 (학회·UROP·카카오모빌리티 인턴 3개만 존재 = 펼침 가능 항목)
+// 펼쳤을 때 보여줄 상세 내용 (학회, UROP, 카카오모빌리티 인턴 3개만 존재 = 펼침 가능 항목)
 const activityDetails: ActivityDetail[] = [
   {
     entryId: "1",
