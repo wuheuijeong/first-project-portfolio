@@ -66,6 +66,14 @@ const fallbackProjects: Project[] = [
     },
 ];
 
+// PM 직무 지원 맥락에 맞춰 상단에 보여줄 프로젝트 우선순위 (제목에 포함된 키워드로 매칭)
+const PROJECT_ORDER = ["PJ DIY", "TF", "자동화", "공급자", "UAM"];
+
+function projectOrderIndex(title: string) {
+    const idx = PROJECT_ORDER.findIndex((keyword) => title.includes(keyword));
+    return idx === -1 ? PROJECT_ORDER.length : idx;
+}
+
 export function useProjects() {
 
     const [projects, setProjects] = useState<Project[]>([]);
@@ -98,6 +106,8 @@ export function useProjects() {
                 demoUrl: row.demo_url,
                 githubUrl: row.github_url,
             }));
+
+            mapped.sort((a, b) => projectOrderIndex(a.title) - projectOrderIndex(b.title));
 
             setProjects(mapped);
             setLoading(false);

@@ -35,7 +35,7 @@ const activities: ActivityEntry[] = [
     type: "동아리",
     date: "2024.04 ~ 2024.09",
     title: "데이터 분석 대학 연합동아리 WEIT",
-    summary: "데이터분석·머신러닝 스터디 진행",
+    summary: "데이터분석과 머신러닝 스터디 진행",
     highlight: "대한항공-아시아나 합병 분석 프로젝트 수행",
   },
   {
@@ -43,14 +43,14 @@ const activities: ActivityEntry[] = [
     type: "부트캠프",
     date: "2024.10 ~ 2025.02",
     title: "Codeit Boost 데이터 분석 부트캠프",
-    summary: "데이터애널리스트입문·Python기초 과정 수료",
+    summary: "데이터애널리스트입문, Python기초 과정 수료",
     highlight: "'게 나이 예측 머신러닝' 프로젝트로 데모데이 우수상 수상",
   },
   {
     id: "6",
     type: "인턴",
     date: "2025.06 ~ 2026.03",
-    title: "카카오모빌리티 인턴 (주차사업팀)",
+    title: "카카오모빌리티 인턴 (P&C플랫폼사업팀)",
     summary: "'골목 주차 공유' 신규 사업 기획부터 업무 자동화까지",
   },
 ];
@@ -59,12 +59,13 @@ const activities: ActivityEntry[] = [
 const activityDetails: ActivityDetail[] = [
   {
     entryId: "1",
-    org: "서울 지역 대학(원)생 대상 UAM 수요예측 분석",
-    roleNote: "제1저자 · 팀장",
+    org: "UAM 수요 예측 분석 및 버티포트 입지 선정 연구",
+    roleNote: "제1저자, 팀장",
     metrics: ["설문 115명"],
     points: [
       { label: "연구", text: "서울 지역 대학(원)생 대상 UAM 수요예측 분석 연구 설계" },
-      { label: "분석", text: "115명 설문 데이터를 Python으로 정제·분석, Matplotlib으로 시각화" },
+      { label: "분석", text: "115명 설문 데이터를 Python으로 정제하고 분석, Matplotlib으로 시각화" },
+      { label: "발표", text: "포스터 발표 및 논문 제출로 연구 성과를 학회에 공유" },
     ],
   },
   {
@@ -85,10 +86,10 @@ const activityDetails: ActivityDetail[] = [
     metrics: ["부사장 보고 채택", "입력 시간 −90%", "검수 시간 −60%"],
     points: [
       { label: "기획", text: "설비 투자 부담 없는 '골목 주차 공유(PJ DIY)' 사업모델 기획, 수익배분 구조 설계 → 사업팀 발표 → 부사장 보고 안건 채택" },
-      { label: "분석", text: "수수료율·정산 특약 등 운영 데이터를 분석해 신규 상품 성과 측정, TF 회고에 반영" },
-      { label: "자동화", text: "현장 감시 프로그램·대량 수정 매크로 등 업무 자동화 툴 4종 직접 기획·구현" },
+      { label: "분석", text: "수수료율, 정산 특약 등 운영 데이터를 분석해 신규 상품 성과 측정, TF 회고에 반영" },
+      { label: "자동화", text: "수수료 감시, 자동 입력, 특약 알림, 안내문구 생성 등 업무 자동화 툴 4종 직접 기획하고 구현" },
     ],
-    skills: ["JavaScript", "Selenium"],
+    skills: ["LLM", "Tampermonkey", "JavaScript", "Selenium"],
     relatedProject: true,
   },
 ];

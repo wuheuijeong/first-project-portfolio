@@ -5,7 +5,7 @@ import CareerTimeline from './components/sections/Career/CareerTimeline'
 import Skills from './components/sections/Skill/Skills'
 import Projects from './components/sections/Projects/Projects'
 import Activity from './components/sections/Activity/Activity'
-import Blog from './components/sections/Blog/Blog'
+// import Blog from './components/sections/Blog/Blog' // 올린 블로그 글이 없어서 섹션 비활성화
 import Closing from './components/sections/Closing/Contact'
 import WordCloudChat from './components/sections/WordColudChat/WordCloudChat'
 import Navbar from './components/Navbar/Navbar'
@@ -22,7 +22,7 @@ export default function App() {
       <section id="skills"><Skills /></section>
       <section id="activity"><Activity /></section>
       <section id="projects"><Projects /></section>
-      <section id="blog"><Blog /></section>
+      {/* <section id="blog"><Blog /></section> */}
       <section id="closing"><Closing /></section>
     </>
   )

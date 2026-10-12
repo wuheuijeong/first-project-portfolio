@@ -9,7 +9,7 @@ const NAV_ITEMS = [
     { id: "skills", label: "Skill" },
     { id: "activity", label: "Activity" },
     { id: "projects", label: "Projects" },
-    { id: "blog", label: "Blog" }
+    // { id: "blog", label: "Blog" }, // 블로그 섹션 비활성화에 맞춰 네비 항목도 주석처리
 ];
 
 export default function Navbar() {
